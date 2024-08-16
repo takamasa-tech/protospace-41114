@@ -14,7 +14,7 @@ test:
   <<: *default
   adapter: mysql2
   username: root
-  password:
+  password: g1012075
   host: localhost
   database: protospace-41114_test
 
