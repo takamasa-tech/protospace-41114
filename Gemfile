@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby "２.７.４"
+ruby "3.2.0"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.0"
@@ -68,7 +68,7 @@ group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"
   gem "selenium-webdriver"
-  gem "webdrivers"
+  gem "webdrivers", "~> 5.3.1"
 end
 
 gem 'devise'
@@ -78,3 +78,5 @@ gem 'image_processing', '~> 1.2'
 group :production do
   gem 'pg'
 end
+
+gem 'nokogiri', '< 1.16.7'
