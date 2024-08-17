@@ -6,6 +6,7 @@ class CommentsController < ApplicationController
     else
       @prototype = @comment.prototype
       @comments = @prototype.comments
+      flash.now[:alert] = 'コメントを入力してください。'
       render "prototypes/show"
     end
   end
