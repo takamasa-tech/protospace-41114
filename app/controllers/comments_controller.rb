@@ -1,18 +1,12 @@
 class CommentsController < ApplicationController
   def create
     @comment = Comment.new(comment_params)
-    respond_to do |format|
-      if @comment.save
-        format.html { redirect_to prototype_path(@comment.prototype) }
-        format.js
-      else
-        format.html {
-          @prototype = @comment.prototype
-          @comments = @prototype.comments
-          render "prototypes/show"
-        }
-        format.js { render :error }
-      end
+    @prototype = @comment.prototype
+    if @comment.save
+      redirect_to prototype_path(@prototype)
+    else
+      @comments = @prototype.comments
+      render "prototypes/show"
     end
   end
 
